@@ -1,0 +1,7 @@
+*.class
+*.log
+*.jar
+*.nbm
+/client/target/
+.DS_Store
+/client/nbproject/
