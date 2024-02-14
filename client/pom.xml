@@ -7,6 +7,26 @@
     <packaging>nbm</packaging>
     <name>Language Support for Apache Camel</name>
     <description>Provides completion, validation and documentation features for Apache Camel URI elements.</description>
+    <url>https://github.com/camel-tooling/camel-lsp-client-netbeans</url>
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>Filip Pospisil</name>
+            <email>fpospisi@redhat.com</email>
+            <organization>Red Hat</organization>
+            <organizationUrl>https://www.redhat.com</organizationUrl>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:git://github.com/camel-tooling/camel-lsp-client-netbeans.git</connection>
+        <developerConnection>scm:git:ssh://github.com/camel-tooling/camel-lsp-client-netbeans.git</developerConnection>
+        <url>https://github.com/camel-tooling/camel-lsp-client-netbeans</url>
+    </scm>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <camel-lsp-server-version>1.17.0</camel-lsp-server-version>
@@ -47,6 +67,32 @@
                         <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
                     </archive>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.3.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <!--Download Camel LSP server-->
             <plugin>
