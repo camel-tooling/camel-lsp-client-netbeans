@@ -32,7 +32,7 @@ This is the <a href="https://netbeans.apache.org/">Apache NetBeans</a> extension
 
 ### Requirements
 
-**Apache NetBeans 20** is minimal required version of [Apache NetBeans IDE](https://netbeans.apache.org/).
+**Apache NetBeans 21** is minimal required version of [Apache NetBeans IDE](https://netbeans.apache.org/).
 
 **Java 17+** is currently required to launch the [Apache Camel Language Server](https://github.com/camel-tooling/camel-language-server).
 
