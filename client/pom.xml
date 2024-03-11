@@ -9,8 +9,8 @@
     <description>Provides completion, validation and documentation features for Apache Camel URI elements.</description>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <camel-lsp-server-version>1.17.0</camel-lsp-server-version>
-        <netbeans-release>RELEASE200</netbeans-release>
+        <camel-lsp-server-version>1.18.0</camel-lsp-server-version>
+        <netbeans-release>RELEASE210</netbeans-release>
     </properties>
     <build>
         <plugins>
