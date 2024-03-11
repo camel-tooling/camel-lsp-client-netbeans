@@ -1,0 +1,37 @@
+name: Signing jars
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    strategy:
+      fail-fast: true
+    
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: 17
+        distribution: 'temurin'
+        cache: maven
+        gpg-private-key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
+        gpg-passphrase: MAVEN_GPG_PASSPHRASE
+
+    - name: Build and sign
+      env:
+        MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
+      run: mvn -P sign -B verify -f client/pom.xml
+
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: signed-artifacts
+        path: client/target/*.asc
