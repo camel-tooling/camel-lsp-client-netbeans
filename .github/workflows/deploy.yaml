@@ -1,7 +1,7 @@
 name: Deploy module
 
 on:
-  push:
+  pull_request:
     branches: [ main ]
   workflow_dispatch:
 
@@ -25,20 +25,20 @@ jobs:
         gpg-private-key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
         gpg-passphrase: MAVEN_GPG_PASSPHRASE # env variable for passphrase in sign and deploy
         server-id: ossrh # Value of the distributionManagement/repository/id field of the pom.xml
-        server-username: MAVEN_USERNAME # env variable for username in deploy
+        server-username: MAVEN_CENTRAL_USERNAME # env variable for username in deploy
         server-password: MAVEN_CENTRAL_TOKEN # env variable for token in deploy
 
     - name: Cache SonarCloud packages
       uses: actions/cache@v4.0.2
       with:
-        path: ~/.sonar/cache
+        path: ~/.sonar/cache/
         key: ${{ runner.os }}-sonar
         restore-keys: ${{ runner.os }}-sonar
 
     - name: Build, sign and deploy
       run: mvn -P sign -B deploy -f client/pom.xml
       env:
-        MAVEN_USERNAME: apupier
+        MAVEN_CENTRAL_USERNAME: apupier
         MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
         MAVEN_CENTRAL_TOKEN: ${{ secrets.MAVEN_CENTRAL_TOKEN }}
 
