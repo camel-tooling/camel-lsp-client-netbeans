@@ -28,7 +28,7 @@ import java.nio.file.StandardCopyOption;
  */
 public class Utilities {
 
-    public static final String LANGUAGE_SERVER_JAR = "camel-lsp-server-1.18.0.jar";
+    public static final String LANGUAGE_SERVER_JAR = "camel-lsp-server-1.22.0.jar";
 
     // MIMEs.
     public static final String XML_MIME = "text/xml";
