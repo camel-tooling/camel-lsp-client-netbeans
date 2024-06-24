@@ -29,8 +29,8 @@
     </scm>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <camel-lsp-server-version>1.18.0</camel-lsp-server-version>
-        <netbeans-release>RELEASE210</netbeans-release>
+        <camel-lsp-server-version>1.22.0</camel-lsp-server-version>
+        <netbeans-release>RELEASE220</netbeans-release>
     </properties>
     <build>
         <plugins>
