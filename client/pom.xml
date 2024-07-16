@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.camel-tooling.netbeans</groupId>
     <artifactId>camel-lsp-client-netbeans</artifactId>
-    <version>0.1.0</version>
+    <version>0.2.0-SNAPSHOT</version>
     <packaging>nbm</packaging>
     <name>Language Support for Apache Camel</name>
     <description>Provides completion, validation and documentation features for Apache Camel URI elements.</description>
