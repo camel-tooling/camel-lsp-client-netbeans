@@ -46,4 +46,4 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=camel-tooling_camel-lsp-client-netbeans -f client/pom.xml
+      run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.token=${SONAR_TOKEN} -Dsonar.organization=camel-tooling -Dsonar.projectKey=camel-tooling_camel-lsp-client-netbeans -Dsonar.host.url=https://sonarcloud.io -f client/pom.xml
