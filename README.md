@@ -6,7 +6,7 @@
 <p align="center">
   <a href="./CHANGELOG.md"><img src="./docs/images/badges/version.svg" alt="Version"/></a>
   <a href="./LICENSE"><img src="./docs/images/badges/licence.svg" alt="License"/></a>
-  <a href="https://plugins.netbeans.apache.org/"><img src="./docs/images/badges/download.svg" alt="Download"/></a>  
+  <a href="https://plugins.netbeans.apache.org/catalogue/?id=101"><img src="./docs/images/badges/download.svg" alt="Download"/></a>  
 </p>
 
 <p align="center">
