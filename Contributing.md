@@ -24,7 +24,7 @@ Building Maven package from command line
 - Merge PR if OK.
 - Check that a [GitHub Actions build](https://https://github.com/pospisilf/camel-lsp-client-netbeans/actions) is triggered and successful.
 - Create corresponding tag.
-- Check that the artifact is available on https://repo1.maven.org/maven2/com/github/camel-tooling/camel-lsp-client-netbeans/. It usually takes up to 30 minutes.
+- Check that the artifact is available on https://repo1.maven.org/maven2/com/github/camel-tooling/netbeans/camel-lsp-client-netbeans/. It usually takes up to 30 minutes.
 - Update [pom](client/pom.xml) to use next snapshot version.
 - Provide PR.
 - Merge PR if OK.
