@@ -29,7 +29,7 @@ jobs:
         server-password: MAVEN_CENTRAL_TOKEN # env variable for token in deploy
 
     - name: Cache SonarCloud packages
-      uses: actions/cache@v4.0.2
+      uses: actions/cache@v4
       with:
         path: ~/.sonar/cache
         key: ${{ runner.os }}-sonar
@@ -38,7 +38,7 @@ jobs:
     - name: Build, sign and deploy
       run: mvn -P sign -B deploy -f client/pom.xml
       env:
-        MAVEN_USERNAME: apupier
+        MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
         MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
         MAVEN_CENTRAL_TOKEN: ${{ secrets.MAVEN_CENTRAL_TOKEN }}
 
